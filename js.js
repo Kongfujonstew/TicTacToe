@@ -6,6 +6,8 @@ var board = [
   [0,0,0],
 ]
 
+var currentPlayer = 'blue';
+
 var pieces = {
   0: 'white',
   1: 'blue',
@@ -20,11 +22,14 @@ var renderBoard = (board) => {
   board.forEach(function(row, index) {
     row.forEach(function(pieceValue) {
       var newPiece = document.createElement('div');
-      newPiece.className = pieceValue;
-      document.getElementById(index).append(newPiece)
+      newPiece.className = pieces[pieceValue];
+      var row = document.getElementById(index);
+      row.appendChild(newPiece)
     })
   })
 }
 
 
 // renderBoard(board);
+
+
